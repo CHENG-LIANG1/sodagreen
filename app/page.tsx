@@ -313,12 +313,14 @@ export default function Home() {
           {members.map((member) => (
             <li key={member.name}>
               <button type="button" className="member-card" aria-label={`${member.name}，${member.role}：${member.bio}`}>
-                <strong>{member.name}</strong>
-                <span>{member.role}</span>
-                <i className="member-pop" aria-hidden="true">
-                  <small>{member.alias} · {member.role}</small>
-                  <p>{member.bio}</p>
-                </i>
+                <span className="member-name-anchor">
+                  <strong>{member.name}</strong>
+                  <i className="member-pop" aria-hidden="true">
+                    <small>{member.alias} · {member.role}</small>
+                    <p>{member.bio}</p>
+                  </i>
+                </span>
+                <span className="member-role">{member.role}</span>
               </button>
             </li>
           ))}
