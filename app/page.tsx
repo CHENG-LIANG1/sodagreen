@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
-import { members, milestones, releases, seasons, type Release, type ReleaseKind } from "./discography";
+import { lyricFragments, members, milestones, releases, seasons, type Release, type ReleaseKind } from "./discography";
 
 type Filter = "all" | ReleaseKind;
 
@@ -279,6 +279,31 @@ export default function Home() {
             </button>
           ))}
         </div>
+      </section>
+
+      <section className="lyrics section-pad" id="lyrics" aria-labelledby="lyrics-title">
+        <header className="lyrics-head">
+          <div>
+            <span>SELECTED LYRICS / 歌詞標本</span>
+            <h2 id="lyrics-title">四句，留在唱片內頁。</h2>
+          </div>
+          <p>從春日融雪、盛夏勞動，到愛裡的控制與冬天的風；短短一句，也能留下整張唱片的氣候。</p>
+        </header>
+        <div className="lyric-sheets">
+          {lyricFragments.map((fragment) => (
+            <figure className="lyric-sheet" key={fragment.song}>
+              <figcaption>
+                <span>{fragment.year}</span>
+                <small>《{fragment.album}》</small>
+              </figcaption>
+              <blockquote>
+                <p>{fragment.line}</p>
+              </blockquote>
+              <strong>〈{fragment.song}〉</strong>
+            </figure>
+          ))}
+        </div>
+        <p className="lyrics-note">摘句僅作作品索引；詞曲版權屬原權利人。</p>
       </section>
 
       <section className="timeline section-pad" id="time" aria-labelledby="time-title">

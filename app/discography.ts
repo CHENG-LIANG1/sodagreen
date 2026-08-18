@@ -282,6 +282,13 @@ export const seasons = [
   { name: "冬 未了", place: "柏林", releaseId: 1593446659 },
 ].map((season) => ({ ...season, release: releases.find((release) => release.id === season.releaseId)! }));
 
+export const lyricFragments = [
+  { song: "控制狂", line: "丟掉自由，就是自由的方法。", album: "你在煩惱什麼", year: "2011" },
+  { song: "回車諾比的夢", line: "那等不到的道歉，交給風。", album: "冬 未了", year: "2015" },
+  { song: "融雪之前", line: "日代替月，笑著醒過來。", album: "春・日光", year: "2009" },
+  { song: "他夏了夏天", line: "汗水在他的身上化成了彩虹。", album: "夏 / 狂熱", year: "2009" },
+];
+
 export const milestones = [
   { year: "2001", title: "成團", note: "在政大金旋獎相遇的六個人，開始以蘇打綠的名字一起寫歌。" },
   { year: "2005", title: "同名專輯", note: "第一張完整專輯發行，清澈又古怪的聲音正式被聽見。" },
