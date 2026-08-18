@@ -171,6 +171,10 @@ export default function Home() {
           </div>
           <span className="tonearm"><i /></span>
         </div>
+        <blockquote className="ambient-lyric hero-lyric">
+          <p>這是一首簡單的小情歌。</p>
+          <cite>〈小情歌〉</cite>
+        </blockquote>
       </section>
 
       <section className="works" id="works" aria-labelledby="works-title">
@@ -215,6 +219,10 @@ export default function Home() {
           ))}
         </div>
         <div className="rail-line section-pad" aria-hidden="true"><span /></div>
+        <blockquote className="ambient-lyric works-lyric section-pad">
+          <p>跳動的世界裡，找你的頻率。</p>
+          <cite>〈頻率〉</cite>
+        </blockquote>
       </section>
 
       <section className="now-playing section-pad" id="now-playing" aria-labelledby="now-title">
@@ -279,15 +287,19 @@ export default function Home() {
             </button>
           ))}
         </div>
+        <blockquote className="ambient-lyric seasons-lyric">
+          <p>當你需要個夏天。</p>
+          <cite>〈無與倫比的美麗〉</cite>
+        </blockquote>
       </section>
 
       <section className="lyrics section-pad" id="lyrics" aria-labelledby="lyrics-title">
         <header className="lyrics-head">
           <div>
             <span>SELECTED LYRICS / 歌詞標本</span>
-            <h2 id="lyrics-title">四句，留在唱片內頁。</h2>
+            <h2 id="lyrics-title">六句，留在唱片內頁。</h2>
           </div>
-          <p>從春日融雪、盛夏勞動，到愛裡的控制與冬天的風；短短一句，也能留下整張唱片的氣候。</p>
+          <p>從春日融雪、盛夏勞動，到愛裡的控制、思念與冬天的風；短短一句，也能留下整張唱片的氣候。</p>
         </header>
         <div className="lyric-sheets">
           {lyricFragments.map((fragment) => (
@@ -311,6 +323,10 @@ export default function Home() {
           <h2 id="time-title">二十年，一刻。</h2>
           <p>歌一直往前走，時間則在每一次合唱裡留下刻度。</p>
         </header>
+        <blockquote className="ambient-lyric timeline-lyric">
+          <p>謝謝再遇見。</p>
+          <cite>〈再遇見〉</cite>
+        </blockquote>
         <div className="time-stream" aria-hidden="true">
           <svg viewBox="0 0 1200 160" preserveAspectRatio="none">
             <path d="M0 80 C110 20 180 140 300 80 S480 20 600 80 790 145 900 78 1080 20 1200 80" />
@@ -350,6 +366,10 @@ export default function Home() {
             </li>
           ))}
         </ul>
+        <blockquote className="ambient-lyric members-lyric">
+          <p>回到我的世界，無謂的事都走遠。</p>
+          <cite>〈小宇宙〉</cite>
+        </blockquote>
       </section>
 
       <footer className="site-footer section-pad">

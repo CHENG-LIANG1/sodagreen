@@ -287,6 +287,8 @@ export const lyricFragments = [
   { song: "回車諾比的夢", line: "那等不到的道歉，交給風。", album: "冬 未了", year: "2015" },
   { song: "融雪之前", line: "日代替月，笑著醒過來。", album: "春・日光", year: "2009" },
   { song: "他夏了夏天", line: "汗水在他的身上化成了彩虹。", album: "夏 / 狂熱", year: "2009" },
+  { song: "無與倫比的美麗", line: "你有我的蝴蝶，我有你的草原。", album: "無與倫比的美麗", year: "2007" },
+  { song: "我好想你", line: "我還踮著腳思念。", album: "秋：故事", year: "2013" },
 ];
 
 export const milestones = [
