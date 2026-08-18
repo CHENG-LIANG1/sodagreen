@@ -310,8 +310,17 @@ export default function Home() {
           <p>從校園到小巨蛋，名字並排的方式一直沒有變。</p>
         </header>
         <ul>
-          {members.map(([name, role]) => (
-            <li key={name}><strong>{name}</strong><span>{role}</span></li>
+          {members.map((member) => (
+            <li key={member.name}>
+              <button type="button" className="member-card" aria-label={`${member.name}，${member.role}：${member.bio}`}>
+                <strong>{member.name}</strong>
+                <span>{member.role}</span>
+                <i className="member-pop" aria-hidden="true">
+                  <small>{member.alias} · {member.role}</small>
+                  <p>{member.bio}</p>
+                </i>
+              </button>
+            </li>
           ))}
         </ul>
       </section>

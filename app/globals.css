@@ -715,10 +715,75 @@ svg { width: 1em; height: 1em; display: block; }
   list-style: none;
   border-block: 1px solid var(--line);
 }
-.members li { min-height: 135px; display: grid; place-items: center; align-content: center; gap: 14px; border-left: 1px solid var(--line); }
+.members li { min-height: 135px; position: relative; border-left: 1px solid var(--line); }
 .members li:first-child { border-left: 0; }
-.members strong { font: 500 clamp(21px, 1.75vw, 29px)/1 var(--serif); letter-spacing: 0.06em; }
+.member-card {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  padding: 16px 10px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 14px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.members strong {
+  font: 500 clamp(21px, 1.75vw, 29px)/1 var(--serif);
+  letter-spacing: 0.06em;
+  transition: transform 320ms var(--ease-out);
+}
+.member-card:hover strong, .member-card:focus strong { transform: translateY(-2px); }
 .members span { color: var(--ink-soft); font: 500 9px/1 var(--utility); letter-spacing: 0.2em; text-transform: uppercase; }
+.member-pop {
+  position: absolute;
+  z-index: 12;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  translate: -50% 0;
+  width: 252px;
+  padding: 18px 20px 20px;
+  background: var(--ink);
+  color: var(--paper-bright);
+  font-style: normal;
+  text-align: left;
+  box-shadow: 0 26px 46px -20px rgba(11, 38, 28, 0.5);
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 240ms ease, transform 340ms var(--ease-out);
+}
+.member-pop::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  translate: -50% 0;
+  border: 6px solid transparent;
+  border-top-color: var(--ink);
+}
+.member-card:hover .member-pop, .member-card:focus .member-pop { opacity: 1; transform: translateY(0); }
+.member-pop small {
+  display: block;
+  color: var(--jade-light);
+  font: 500 10px/1 var(--utility);
+  letter-spacing: 0.18em;
+}
+.member-pop p {
+  margin: 10px 0 0;
+  color: rgba(247, 250, 246, 0.82);
+  font-size: 11px;
+  line-height: 1.95;
+  letter-spacing: 0.05em;
+}
+@media (max-width: 780px) {
+  .member-pop { width: 232px; }
+  .members li:nth-child(odd) .member-pop { left: 0; translate: 0 0; }
+  .members li:nth-child(even) .member-pop { left: auto; right: 0; translate: 0 0; }
+  .member-pop::after { display: none; }
+}
 .site-footer {
   min-height: 330px;
   padding-block: 70px 40px;
